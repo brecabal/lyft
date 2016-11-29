@@ -1,6 +1,6 @@
-var cargarPagina = function() {
-	$(".white-text").eq(0).text(window.localStorage.getItem("nombre")+" "+window.localStorage.getItem("apellido"));
-	$(".white-text").eq(1).text(window.localStorage.getItem("correo"));
+var cargaLugar = function() {
+	$(".white-text").eq(0).text(window.localStorage.getItem("name")+" "+window.localStorage.getItem("lastname"));
+	$(".white-text").eq(1).text(window.localStorage.getItem("mail"));
 	$(".button-collapse").sideNav({
 		menuWidth: 250,
 		edge: 'left',
@@ -10,7 +10,7 @@ var cargarPagina = function() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
 	}
-	$("#buscar").click(buscar);
+	$("#search").click(buscar);
 };
 
 var map,lat,lon;
@@ -35,7 +35,7 @@ var funcionExito = function(posicion) {
 		lat: lat,
 		lng: lon,
 	});
-	var content = $("#direccion");
+	var content = $("#direction");
 	var dir = "";
 	var latlng = new google.maps.LatLng(lat, lon);
 	geocoder = new google.maps.Geocoder();
@@ -51,8 +51,8 @@ var funcionExito = function(posicion) {
 		else{
 			dir = "El Servicio de Codificación Geográfica ha fallado con el siguiente error: " + estado;
 		}
-		window.localStorage.setItem("direccion",dir)
-		content.text(window.localStorage.getItem("direccion"));
+		window.localStorage.setItem("direction",dir)
+		content.text(window.localStorage.getItem("direction"));
 	});
 
 }
@@ -62,7 +62,7 @@ var funcionError = function (error) {
 var buscar= function(e){
 	e.preventDefault();
 	GMaps.geocode({
-		address: $('#direccion-cambiar').val(),
+		address: $('#direccion-dos').val(),
 		callback: function(results, status) {
 			if (status == 'OK') {
 				var latlng = results[0].geometry.location;
@@ -83,7 +83,7 @@ var buscar= function(e){
 			}
 		}
 	});
-	$('#buscar').val("");
+	$('#search').val("");
 }
-$(document).ready(cargarPagina);
+$(document).ready(cargaLugar);
 

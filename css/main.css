@@ -147,7 +147,7 @@
 	margin: 0 auto;
 	left: 42%;
 }
-#direccion{
+#direction{
 	height: auto;
 	position: absolute;
 	bottom: 35px;
@@ -198,7 +198,7 @@
 	z-index: 2;
 	position: absolute;
 }
-.background{
+.background: {
 	width: 100%;
 	height: auto;
 	background-size: 100% auto;
@@ -212,7 +212,7 @@
 	font-size: 12px;
 	color: #fff;
 }
-.opciones-slide{
+.lista-opciones{
 	box-sizing: border-box;
 	padding: 5px 5%;
 }
@@ -224,11 +224,11 @@
 	color: #DFDBDB;
 	background-color:#fff !important;
 }
-.icono-slide{
+.slide{
 	margin-right: 15px;
 	padding: 5% 0;
 }
-.icono-slide-editar{
+.iconos{
 	margin-right: 30px;
 }
 .usuario{
@@ -242,24 +242,27 @@
 	padding: 20px 35px;
 	font-size: 18px;
 }
-#buscar{
-	height: 44px;
-	padding: 0 15px;
-}
+
 
 #usuario{
 	padding: 20px;
 	font-size: 30px;
 	margin: 0 auto;
 }
-/*EDITAR PERFIL*/
-.tres-puntos{
+
+.desplegable{
 	position: absolute;
 	top: -25px;
 	right: 6px;
 	font-size: 26px;
 	color: white;
 }
-.tres-puntos:focus{
-	color: white;
+.desplegable:focus{
+	color: #fff;
 }
+
+#buscar{
+	height: 44px;
+	padding: 0 15px;
+}
+

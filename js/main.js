@@ -105,18 +105,19 @@ var maxLastname = function(){
 	}
 
 }
+//VALIDACIONES
 var checkMail = function(){
 	var caracteres = (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/);
 	var alertas = $("#alertas");
-	var namr = $(".in-dates").eq(0).val().length;
+	var name = $(".in-dates").eq(0).val().length;
 	var lastname = $(".in-dates").eq(1).val().length;
-	var materialize = $("#in-mail").val().length;
+	var email = $("#in-mail").val().length;
 	var checkingMail = $("#in-mail").val().match(caracteres);
 	if(checkingMail){
-		$("#registration").attr("href", "ubicacion.html");
+		$("#registration").attr("href", "location.html");
 		window.localStorage.setItem("name",$(".in-dates").eq(0).val());
 		window.localStorage.setItem("lastname",$(".in-dates").eq(1).val());
-		window.localStorage.setItem("mail",$("#in-mail").val());
+		window.localStorage.setItem("email",$("#in-mail").val());
 		/*var diaJoin = new Date();
 		var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 		window.localStorage.setItem("join",diaJoin.getDate()+ " " +meses[diaJoin.getMonth()]+ " " +diaJoin.getFullYear());*/
@@ -127,18 +128,18 @@ var checkMail = function(){
 		alertas.removeClass("hiden");
 		setTimeout(function(){ alertas.addClass("hiden"); }, 3000);
 	}
-	if(mail==0 ){
+	if(email==0 ){
 		alertas.text("Ingresa tu correo");
 		alertas.removeClass("hiden");
 		setTimeout(function(){ alertas.addClass("hiden"); }, 3000);
 	}
-	if(mail>=50){
+	if(email>=50){
 		alertas.text("El correo debe tener como máximo 50 caracteres");
 		alertas.removeClass("hiden");
 		setTimeout(function(){ alertas.addClass("hiden"); }, 3000);
 	}
 	
-	if(name==0 || name==0){
+	if(name==0){
 		alertas.text("Ingresa tus datos");
 		alertas.removeClass("hiden");
 		setTimeout(function(){ alertas.addClass("hiden"); }, 3000);
@@ -149,23 +150,24 @@ var checkMail = function(){
 		setTimeout(function(){ alertas.addClass("hiden"); }, 3000);
 	}
 
-	if(lastname==0 && mail==0){
+	if(lastname==0 && email==0){
 		alertas.text("Ingresa tu apellido y correo");
 		alertas.removeClass("hiden");
 		setTimeout(function(){ alertas.addClass("hiden"); }, 3000);
 	}
-	if(name==0 && mail==0){
+	if(name==0 && email==0){
 		alertas.text("Ingresa tu nombre y correo");
 		alertas.removeClass("hiden");
 		setTimeout(function(){ alertas.addClass("hiden"); }, 3000);
 	}
 	
-	if(lastname==0 && name==0 && mail==0){
+	if(name==0 && lastname==0 && email==0){
 		alertas.text("Ingresa tu datos");
 		alertas.removeClass("hiden");
 		setTimeout(function(){ alertas.addClass("hiden"); }, 3000);
 	}
 }
+// CARGANDO TODOS LOS EVENTOS
 var load = function(){
 	$("#in-cel").focus();
 	$("#in-cel").keypress(press);
@@ -182,7 +184,7 @@ var load = function(){
 	$(".in.dates").eq(0).keydown(maxName);
 	$(".in-dates").eq(1).keydown(maxLastname);
 	$("#registration").click(checkMail);
-	$("#usuario-editable").text(window.localStorage.getItem("nombre"));
+	$("#usuario-editable").text(window.localStorage.getItem("name"));
 	
 }
 $(document).ready(load);
