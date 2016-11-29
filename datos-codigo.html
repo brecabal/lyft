@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<title>Lyft</title>
+		<link rel="shortcut icon" href="img/lyft.ico">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body class="text-center">
+		<nav class="navbar navbar-default navbar-tel">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand btn-back" href="datos-cel.html"> 
+					<i class="glyphicon glyphicon-menu-left"></i>
+				</a>
+				<h2 class="titulo-tel">Verifica tu número</h2>
+				<p class="parrafo-tel">Join now for free ride credit</p>
+			</div>
+		  </div>
+		</nav>
+		<div class="container-fluid text-center">
+			<div class="input-group in-date">
+				<h2 class="lab-code">LAB -</h2>
+				<input type="tel" maxlength="1" class="in-code text-center">
+				<input type="tel" maxlength="1" class="in-code text-center">
+				<input type="tel" maxlength="1" class="in-code text-center">
+			</div>
+			<p>Escribe el código enviado a +56 <span id="numbers"></span></p>
+			<button type="button" id="sent-code" class="btn btn-default">Pida otro código</button>
+			<div class="hiden alertas" id="alertas"></div>
+			<a id="done-code"><button class="btn btn-default btn-lg btn-next">NEXT</button></a>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
