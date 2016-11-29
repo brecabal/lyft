@@ -1,6 +1,6 @@
 var cargaLugar = function() {
 	$(".white-text").eq(0).text(window.localStorage.getItem("name")+" "+window.localStorage.getItem("lastname"));
-	$(".white-text").eq(1).text(window.localStorage.getItem("mail"));
+	$(".white-text").eq(1).text(window.localStorage.getItem("email"));
 	$(".button-collapse").sideNav({
 		menuWidth: 250,
 		edge: 'left',
