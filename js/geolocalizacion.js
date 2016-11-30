@@ -1,3 +1,5 @@
+//referencia https://developers.google.com/maps/documentation/javascript/examples/map-geolocation?hl=es-419
+//solo cambie lo de inglés a español y puse una funcion para que guardara el nombre del lugar y la llame al final
 var cargaLugar = function() {
 	$(".white-text").eq(0).text(window.localStorage.getItem("name")+" "+window.localStorage.getItem("lastname"));
 	$(".white-text").eq(1).text(window.localStorage.getItem("email"));

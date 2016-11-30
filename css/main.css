@@ -170,21 +170,20 @@
 	margin: 0 15%;
 }
 #usuario{
-	width: 15%;
+	width: 10%;
 	position: absolute;
 	top: 20px;
 	z-index: 1;
 	border-radius: 50%;
 	left: 10%;
-	opacity: 0.6;
+	
 }
 .heart{
 	position: absolute;
 	top: 20px;
 	z-index: 1;
 	padding: 10px;
-	font-size: 1.3em;
-	opacity: 0.6;
+	font-size:40px;
 	border: 0;
 	background-color:#C8C6C6;
 	color: #fff;
@@ -214,7 +213,7 @@
 }
 .lista-opciones{
 	box-sizing: border-box;
-	padding: 5px 5%;
+	padding: 5% 5%;
 }
 .slide-left{
 	display: inline-block !important;
@@ -232,10 +231,13 @@
 	margin-right: 30px;
 }
 .usuario{
-	width: 30%;
+	width: 20%;
+	border-radius: 50%;
 }
 .fondo-usuario{
-	background-color:#FF6BC2;
+	background-image: url(../img/14604841_10210472092977048_3875745267603672774_n.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 	padding: 40px 0;
 }
 .edita{
