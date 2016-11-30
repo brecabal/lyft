@@ -60,11 +60,19 @@
 	display: inline-block;
 }
 
+.boton-chile{
+	height: 36px;
+	margin-bottom: 10px;
+	width: 80px;	
+}
+
 .number-chile{
 	border-right: 0;
+	margin-bottom: 12px;
 }
 .input-celular{
-	padding-bottom:10px;
+	padding-bottom:8px;
+	margin-bottom: 40px;
 }
 .form-control:focus{
 	outline: none !important;
