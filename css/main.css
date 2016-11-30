@@ -1,3 +1,7 @@
+body{
+	font-family: 'Roboto Slab', serif;
+}
+
 /*primer css sign in*/
 .fondo-sign{
 	background-image: url(../img/bg1.jpg);
@@ -13,10 +17,15 @@
 }
 
 .log-in-buttom{
-	background-color: transparent;
+	background-color: linear-gradient(to right, #3F1F62 , #FC1DBD );;
 	color: #fff;
 	width: 100%;
-	border: 2px #fff solid;
+	
+}
+
+.log-in-buttom{
+	color: #fff;
+	background: linear-gradient(to right, #3F1F62 , #FC1DBD );
 }
 
 .log-in{
@@ -25,13 +34,14 @@
 	left: 10px;
 }
 
+
 .sing-up-buttom{
 	color: #fff;
 	background: linear-gradient(to right, #3F1F62 , #FC1DBD );
 	width: 100%;
 }
 .sing-up-buttom:active{
-	color: white;
+	color: #fff;
 	background: linear-gradient(to right, #3F1F62 , #FC1DBD );
 }
 
@@ -100,7 +110,7 @@
 }
 .btn-next{
 	border-radius: 0;
-	background-color: deeppink;
+	background-color: #FC1CD4;
 	color: white;
 	padding: 20px 16px;
 	width: 100%;
@@ -108,8 +118,15 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
+}
 
-}/*datos-direccion*/
+.sent-code:hover{
+	color: #fff;
+	background-color:#FC1CD4;
+
+
+}
+/*datos-direccion*/
 .in-dates{
 	display: inline-block;
 	border: 0;
@@ -125,17 +142,17 @@
 	margin-bottom: 10px;
 }
 .alertas{
-	width: 60%;
-	padding: 15px;
+	width: 70%;
+	padding: 13px;
 	word-wrap: break-word;
 	white-space: pre-line;
-	background-color: #000;
+	background-color:#C8C6C6;
 	position: absolute;
-	top: 50%;
-	left: 19%;
+	top: 40%;
+	left: 20%;
 	text-align: center;
-	color: white;
-	opacity: 0.6;
+	color: #fff;
+	
 }
 .hiden{
 	display: none;
