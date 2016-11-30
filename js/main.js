@@ -8,8 +8,8 @@ var press = function(ev){
 }
 var numeroCel= function(){
 	var alertas = $("#alertas");
-	var longitud = $("#in-cel").val().length;
-		if (longitud == 9) {
+	var largo = $("#in-cel").val().length;
+		if (largo == 9) {
 			$("#codigo-random").attr("href", "datos-codigo.html");
 		} else {
 			alertas.text("El celular debe tener 9 dígitos");
@@ -20,20 +20,20 @@ var numeroCel= function(){
 		}
 }
 var randomCode = function(){
-	var longitud = $("#in-cel").val().length;
-	if(longitud == 9){
-		window.localStorage.setItem("numeroAleatorio", Math.round(Math.random()*900)+99);
-		alert("LAB - " + window.localStorage.getItem("numeroAleatorio"));
+	var largo = $("#in-cel").val().length;
+	if(largo == 9){
+		window.localStorage.setItem("numeroRandom", Math.round(Math.random()*900)+99);
+		alert("LAB - " + window.localStorage.getItem("numeroRandom"));
 		window.localStorage.setItem("celular", $("#in-cel").val());
 	}
 }
 var checkCode = function(){
-	var codigo1 = $(".in-code").eq(0).val();
-	var codigo2 = $(".in-code").eq(1).val();
-	var codigo3 = $(".in-code").eq(2).val();
-	var codigo = codigo1 + codigo2 + codigo3;
+	var codigoPrimero = $(".in-code").eq(0).val();
+	var codigoSegundo = $(".in-code").eq(1).val();
+	var codigoTercero = $(".in-code").eq(2).val();
+	var codigoFinal = codigoPrimero + codigoSegundo + codigoTercero;
 	var alertas = $("#alertas");
-	if(codigo == window.localStorage.getItem("numeroAleatorio")){
+	if(codigoFinal == window.localStorage.getItem("numeroRandom")){
 			$("#done-code").attr("href", "datos-direccion.html");
 		} else {
 			$("#done-code").removeAttr("href");
@@ -47,17 +47,17 @@ var checkCode = function(){
 }
 var pressCode = function(ev){
 	var ascii = ev.keyCode;
-	var longitud = $(this).val().length;
-	if((ascii>=48 && ascii<=57  && longitud==0) || ascii==8){
+	var largo = $(this).val().length;
+	if((ascii>=48 && ascii<=57  && largo==0) || ascii==8){
 		return true;
 	} else{
 		return false;
 	}
 }
 var pressupCode = function(ev){
-	var longitud = $(this).val().length;
+	var largo = $(this).val().length;
 	var ascii = ev.keyCode;
-	if(longitud==1){
+	if(largo==1){
 		$(this).next().focus();
 	}
 	if(ascii==8){
@@ -65,8 +65,8 @@ var pressupCode = function(ev){
 	}
 }
 var segundoCode= function(){
-	window.localStorage.setItem("numeroAleatorio", Math.round(Math.random()*900)+99);
-	alert("LAB - " + window.localStorage.getItem("numeroAleatorio"));
+	window.localStorage.setItem("numeroRandom", Math.round(Math.random()*900)+99);
+	alert("LAB - " + window.localStorage.getItem("numeroRandom"));
 	$(".in-code").val("");
 	$(".in-code").eq(0).focus();
 	$(".in-code").focus();//ojo
@@ -184,7 +184,7 @@ var load = function(){
 	$(".in.dates").eq(0).keydown(maxName);
 	$(".in-dates").eq(1).keydown(maxLastname);
 	$("#registration").click(checkMail);
-	$("#usuario-editable").text(window.localStorage.getItem("name"));
+	$("#usuario-perfil").text(window.localStorage.getItem("name"));
 	
 }
 $(document).ready(load);
