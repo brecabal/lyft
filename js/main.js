@@ -118,9 +118,7 @@ var checkMail = function(){
 		window.localStorage.setItem("name",$(".in-dates").eq(0).val());
 		window.localStorage.setItem("lastname",$(".in-dates").eq(1).val());
 		window.localStorage.setItem("email",$("#in-mail").val());
-		/*var diaJoin = new Date();
-		var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-		window.localStorage.setItem("join",diaJoin.getDate()+ " " +meses[diaJoin.getMonth()]+ " " +diaJoin.getFullYear());*/
+		
 	}
 	else if(!checkingMail){
 		$("#registration").removeAttr("href");
