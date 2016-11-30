@@ -100,7 +100,8 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-}
+
+}/*datos-direccion*/
 .in-dates{
 	display: inline-block;
 	border: 0;
@@ -130,7 +131,13 @@
 }
 .hiden{
 	display: none;
+
 }
+
+.checkboxs{
+	padding-left: 10px;
+}
+
 
 /*MAPS*/
 #map{
