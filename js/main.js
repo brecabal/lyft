@@ -1,3 +1,5 @@
+//validacion para solo poner numeros en el input del celular
+
 var press = function(ev){
 	var ascii = ev.keyCode;
 	if((ascii>=48 && ascii<=57) || ascii==37 || ascii==39 || ascii==8){
@@ -6,6 +8,8 @@ var press = function(ev){
 		return false;
 	}
 }
+
+//alertas para un max de nueve digitos y mostrar el codigo random
 var numeroCel= function(){
 	var alertas = $("#alertas");
 	var largo = $("#in-cel").val().length;
@@ -19,6 +23,8 @@ var numeroCel= function(){
 			$("#codigo-random").removeAttr("href");
 		}
 }
+
+//generando el numero random
 var randomCode = function(){
 	var largo = $("#in-cel").val().length;
 	if(largo == 9){
@@ -27,6 +33,8 @@ var randomCode = function(){
 		window.localStorage.setItem("celular", $("#in-cel").val());
 	}
 }
+
+//validacion del codigo correcto rescatar los valores de los tres digitos 
 var checkCode = function(){
 	var codigoPrimero = $(".in-code").eq(0).val();
 	var codigoSegundo = $(".in-code").eq(1).val();
@@ -45,6 +53,8 @@ var checkCode = function(){
 				alertas.addClass("hiden"); }, 3000)
 		}
 }
+
+//codigo solo numerico
 var pressCode = function(ev){
 	var ascii = ev.keyCode;
 	var largo = $(this).val().length;
@@ -54,6 +64,8 @@ var pressCode = function(ev){
 		return false;
 	}
 }
+
+//focus en cada input una vez que ponga en el primer input
 var pressupCode = function(ev){
 	var largo = $(this).val().length;
 	var ascii = ev.keyCode;
@@ -64,6 +76,8 @@ var pressupCode = function(ev){
 		$(this).prev().focus();
 	}
 }
+
+//generar un segundo codigo si el primero es erroneo o si el usario lo olvida
 var segundoCode= function(){
 	window.localStorage.setItem("numeroRandom", Math.round(Math.random()*900)+99);
 	alert("LAB - " + window.localStorage.getItem("numeroRandom"));
@@ -71,7 +85,7 @@ var segundoCode= function(){
 	$(".in-code").eq(0).focus();
 	$(".in-code").focus();//ojo
 }
-
+//validacion para la direccion solo se admiten letras
 var letras = function(ev){
 	var ascii = ev.keyCode;
 	if ((ascii<97 || ascii>122) && (ascii<65 || ascii>90) && ascii!=45 && ascii!=241 && ascii!=209 && ascii!=32 && ascii!=225 && ascii!=233 && ascii!=237 && ascii!=243 && ascii!=250 && ascii!=193 && ascii!=201 && ascii!=205 && ascii!=211 && ascii!=218 && ascii!=91){
@@ -81,6 +95,7 @@ var letras = function(ev){
 		return true;
 	}
 }
+//validacion nombre maximo 30 caracteres
 var maxName = function(){
 	var alertas = $("#alertas");
 	var name = $(".in-dates").eq(0).val();
@@ -93,6 +108,8 @@ var maxName = function(){
 	}
 
 }
+
+//validacion apellido maximo 30 caracteres
 var maxLastname = function(){
 	var alertas = $("#alertas");
 	var lastname = $(".in-dates").eq(1).val();
@@ -105,7 +122,7 @@ var maxLastname = function(){
 	}
 
 }
-//VALIDACIONES
+//validaciones de mail con caracteres especiales y guardar los datos en local storage yagregarlos en html location
 var checkMail = function(){
 	var caracteres = (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/);
 	var alertas = $("#alertas");
@@ -165,7 +182,7 @@ var checkMail = function(){
 		setTimeout(function(){ alertas.addClass("hiden"); }, 3000);
 	}
 }
-// CARGANDO TODOS LOS EVENTOS
+// cargar los eventos de los id o clases para cada input especial
 var load = function(){
 	$("#in-cel").focus();
 	$("#in-cel").keypress(press);

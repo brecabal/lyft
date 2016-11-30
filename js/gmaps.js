@@ -1,3 +1,6 @@
+//https://hpneo.github.io/gmaps/ pagina y repositorio para hacer mas dinamico y facil el mapa pagina de google API 
+//https://github.com/hpneo/gmaps para obtener una vista mas real de las calles y no tener que modificar los zoom
+
 "use strict";
 (function(root, factory) {
   if(typeof exports === 'object') {
